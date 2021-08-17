@@ -4,6 +4,8 @@
 Analisador de pontos em brancos em plantações através das biblioteca ImageJ
 
 <img src="https://user-images.githubusercontent.com/38302789/129792087-67bc7baf-b9a1-4162-8ab5-06e0acdef823.png"> 
+<img src="https://user-images.githubusercontent.com/38302789/129792352-e9a3c0a3-39f3-4411-adf8-a6c3b3a4ab7c.png">
+     
 
 Instruções de uso:
 * Usar apenas a aplicação .jar:
@@ -14,4 +16,4 @@ Instruções de uso:
 *     - É necessário possuir Java JDK;
 *     - Importar as bibliotecas .jar do imageJ e Surface Plotter 3D (diretório libs)
 
-![image](https://user-images.githubusercontent.com/38302789/129792087-67bc7baf-b9a1-4162-8ab5-06e0acdef823.png)
+
