@@ -9,4 +9,3 @@ Instruções de uso:
 *     - Os códigos estão no diretório src 
 *     - É necessário possuir Java JDK;
 *     - Importar as bibliotecas .jar do imageJ e Surface Plotter 3D
-*    
