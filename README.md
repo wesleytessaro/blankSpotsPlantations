@@ -1,4 +1,4 @@
-# Analisador de Pontos em Brancos em Platanções utilizando ImageJ
+# Analisador de Pontos em Brancos em Plantações utilizando ImageJ
 Analisador de pontos em brancos em plantações através das biblioteca ImageJ
 
 Instruções de uso:
