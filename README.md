@@ -2,6 +2,7 @@
 
 <h2> LGAP - Laboratório de Agricultura de Precisão -IFMS/NA </h2>
 Analisador de pontos em brancos em plantações através das biblioteca ImageJ
+![image](https://user-images.githubusercontent.com/38302789/129792087-67bc7baf-b9a1-4162-8ab5-06e0acdef823.png)
 
 Instruções de uso:
 * Usar apenas a aplicação .jar:
