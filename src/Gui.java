@@ -48,6 +48,8 @@ public class Gui extends javax.swing.JFrame {
         areaPixelsPlantacaoLabel = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         areaPixelsLivreLabel = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        labelAreaTotal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,7 +57,7 @@ public class Gui extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 36, Short.MAX_VALUE)
+            .addGap(0, 23, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -65,13 +67,11 @@ public class Gui extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setText("Analisador de Falhas - LGAP");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Wesley\\Downloads\\pp (1).jpg")); // NOI18N
         jLabel2.setText(" ");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         jLabel3.setText("Laboratório de Agricultura de Precisão - IFMS/NA");
 
-        botaoAnalisa.setIcon(new javax.swing.ImageIcon("C:\\Users\\Wesley\\Downloads\\icons8-pesquisar-48.png")); // NOI18N
         botaoAnalisa.setText("Avaliar Imagem");
         botaoAnalisa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,10 +80,10 @@ public class Gui extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setText("% Ocupação útil:");
+        jLabel4.setText("% Livre:");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel5.setText("% Livre:");
+        jLabel5.setText("% Ocupação útil:");
 
         utilLabel.setText("-");
 
@@ -100,6 +100,11 @@ public class Gui extends javax.swing.JFrame {
         jLabel10.setText("Área Pixels Livre:");
 
         areaPixelsLivreLabel.setText("-");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel6.setText("Área total:");
+
+        labelAreaTotal.setText("-");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -139,7 +144,12 @@ public class Gui extends javax.swing.JFrame {
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel10)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(areaPixelsLivreLabel)))
+                                                .addComponent(areaPixelsLivreLabel))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel6)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(labelAreaTotal)
+                                                .addGap(0, 0, Short.MAX_VALUE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(6, 6, 6))))
@@ -171,7 +181,11 @@ public class Gui extends javax.swing.JFrame {
                                 .addGap(69, 69, 69)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGap(77, 77, 77)
+                                        .addGap(57, 57, 57)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel6)
+                                            .addComponent(labelAreaTotal))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(areaPixelsPlantacaoLabel))
@@ -198,7 +212,7 @@ public class Gui extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoAnalisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAnalisaActionPerformed
-         File escolherArquivo = AnalyzePlantationFailures.escolherArquivo();
+        File escolherArquivo = AnalyzePlantationFailures.escolherArquivo();
         String path = escolherArquivo.getAbsolutePath();
         selectedFileLabel.setText("Arquivo Selecionado:"+escolherArquivo.getName());
        
@@ -226,7 +240,7 @@ public class Gui extends javax.swing.JFrame {
         
         areaPixelsLivreLabel.setText(Float.toString(areaLivre));
         areaPixelsPlantacaoLabel.setText(Float.toString(areaPlantacao));
-        
+        labelAreaTotal.setText(Float.toString(areaLivre+areaPlantacao));
         if(areaLivre==0){
              utilLabel.setText(" 100 ");
              livreLabel.setText("0 ");
@@ -287,8 +301,10 @@ public class Gui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    public static javax.swing.JLabel labelAreaTotal;
     private javax.swing.JLabel livreLabel;
     private static javax.swing.JLabel selectedFileLabel;
     private javax.swing.JLabel utilLabel;
